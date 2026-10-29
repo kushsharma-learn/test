@@ -1,0 +1,10 @@
+account_id = "your-cloudflare-account-id"
+zone_name  = "example.com"
+
+dns_records = {
+  root = { name = "@", type = "A", content = "192.0.2.10", proxied = true }
+  www  = { name = "www", type = "CNAME", content = "example.com", proxied = true }
+  api  = { name = "api", type = "A", content = "192.0.2.20", proxied = true }
+  mx1  = { name = "@", type = "MX", content = "mail.example.com", priority = 10, ttl = 3600 }
+  spf  = { name = "@", type = "TXT", content = "v=spf1 include:_spf.google.com ~all", ttl = 3600 }
+}
